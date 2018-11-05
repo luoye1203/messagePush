@@ -1,0 +1,4 @@
+1 本地测试 时 如果测试 websocket是否可以使用
+    com.xzst.relation.mp.webSocket.WebSocketConfig
+    文件中的代码需要放开注释
+    打包时则需要注释掉，否则报错
