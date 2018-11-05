@@ -15,7 +15,8 @@ spring:
     password: 198412
 
   kafka:
-    bootstrap-servers: 53.80.6.45:9092,53.80.6.46:9092,53.80.6.47:9092,53.80.6.48:9092
+#    bootstrap-servers: 53.80.6.45:9092,53.80.6.46:9092,53.80.6.47:9092,53.80.6.48:9092
+    bootstrap-servers: 10.4.106.21:9092,10.4.106.22:9092,10.4.106.23:9092
     consumer:
       enable:
         auto:
@@ -27,7 +28,8 @@ spring:
           reset: latest
       group-id: warning_group_1
     producer:
-      servers: 53.80.6.45:9092,53.80.6.46:9092,53.80.6.47:9092,53.80.6.48:9092
+#      servers: 53.80.6.45:9092,53.80.6.46:9092,53.80.6.47:9092,53.80.6.48:9092
+      servers: 10.4.106.21:9092,10.4.106.22:9092,10.4.106.23:9092
       topic: warning
       retries: 0
       batch:
@@ -47,21 +49,3 @@ mybatis:
 
 
 
-#httpclient配置参数
-#最大连接数
-http:
-  maxTotal: 100
-#并发数
-  defaultMaxPerRoute: 20
-#创建连接的最长时间
-  connectTimeout: 1000
-#从连接池中获取到连接的最长时间
-  connectionRequestTimeout: 500
-#数据传输的最长时间
-  socketTimeout: 10000
-#提交请求前测试连接是否可用
-  staleConnectionCheckEnabled: true
-
-warning:
-  ip: 10.4.106.7
-  port: 7047

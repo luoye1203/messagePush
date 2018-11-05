@@ -5,4 +5,5 @@
 
 2   static/demo.html 的配置注意打包时更改路径 路径需要加上所属的项目名 例如ws://localhost:8080/项目名/websocket(websocket为@ServerEndpoint的value值)
 
-3
+3   Spring Boot 默认会挨个从 public resources static 里面找是否存在相应的资源，如果有则直接返回
+
