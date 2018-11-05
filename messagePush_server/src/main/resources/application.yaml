@@ -9,10 +9,10 @@ spring:
         max-lifetime: 1800000
         maximum-pool-size: 10
         autoCommit: false
-    driver-class-name: oracle.jdbc.driver.OracleDriver
-    url: jdbc:oracle:thin:@53.80.6.37:1521:orcl
-    username: xzst
-    password: xzst
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/lht_test
+    username: root
+    password: 198412
 
   kafka:
     bootstrap-servers: 53.80.6.45:9092,53.80.6.46:9092,53.80.6.47:9092,53.80.6.48:9092
@@ -47,10 +47,6 @@ mybatis:
 
 
 
-#配置静态访问资源,拦截所有/websocket访问路径 不需要其他配置 必须要在resources文件夹下面建立static文件夹 文件夹名称不能变
-#spring:
-#    mvc:
-#        static-path-pattern: /websocket/**
 #httpclient配置参数
 #最大连接数
 http:

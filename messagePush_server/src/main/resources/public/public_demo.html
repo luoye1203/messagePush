@@ -16,7 +16,7 @@ Welcome<br/>
 
     //判断当前浏览器是否支持WebSocket
     if('WebSocket' in window){
-        websocket = new WebSocket("ws://53.80.6.46:18009/messagePush_server/websocket");
+        websocket = new WebSocket("ws://localhost:8080/chat");
     }
     else{
         alert('Not support websocket')

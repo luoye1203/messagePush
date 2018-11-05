@@ -2,3 +2,7 @@
     com.xzst.relation.mp.webSocket.WebSocketConfig
     文件中的代码需要放开注释
     打包时则需要注释掉，否则报错
+
+2   static/demo.html 的配置注意打包时更改路径 路径需要加上所属的项目名 例如ws://localhost:8080/项目名/websocket(websocket为@ServerEndpoint的value值)
+
+3

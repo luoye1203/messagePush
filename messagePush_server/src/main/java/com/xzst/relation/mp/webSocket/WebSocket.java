@@ -9,7 +9,7 @@ import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-@ServerEndpoint(value = "/websocket", configurator = WebSocketConfig.class)
+@ServerEndpoint(value = "/chat", configurator = WebSocketConfig.class)
 @Component
 public class WebSocket {
 	private final static Logger LOG=Logger.getLogger(WebSocket.class);
