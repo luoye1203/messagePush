@@ -22,7 +22,7 @@ public class KafkaConsumerListener {
 	@Autowired
 	private MessageProcessThreadService messageProcessThreadService;
 
-	@KafkaListener(topics = {"warning"})
+	@KafkaListener(topics = {"warning_new"})
 	public void kafkaConsumerListenterMethod(ConsumerRecord<?, ?> record) {
 
 		if(record!=null&&record.value()!=null&&!record.value().toString().trim().equals("")){
