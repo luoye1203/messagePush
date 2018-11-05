@@ -257,17 +257,17 @@
     </build>
 
 
-    <repositories>
-        <repository>
-            <id>nexus</id>
-            <name>Team Nexus Repository</name>
-            <url>http://10.4.106.21:8086/nexus/content/groups/public/</url>
-        </repository>
-        <repository>
-            <id>cloudera</id>
-            <url>http://10.4.106.21:8086/nexus/content/repositories/cloudera/</url>
-        </repository>
-    </repositories>
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<id>nexus</id>-->
+            <!--<name>Team Nexus Repository</name>-->
+            <!--<url>http://10.4.106.21:8086/nexus/content/groups/public/</url>-->
+        <!--</repository>-->
+        <!--<repository>-->
+            <!--<id>cloudera</id>-->
+            <!--<url>http://10.4.106.21:8086/nexus/content/repositories/cloudera/</url>-->
+        <!--</repository>-->
+    <!--</repositories>-->
 
 
 </project>

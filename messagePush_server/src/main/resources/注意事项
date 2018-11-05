@@ -5,5 +5,17 @@
 
 2   static/demo.html 的配置注意打包时更改路径 路径需要加上所属的项目名 例如ws://localhost:8080/项目名/websocket(websocket为@ServerEndpoint的value值)
 
-3   Spring Boot 默认会挨个从 public resources static 里面找是否存在相应的资源，如果有则直接返回
+3   Spring Boot 默认会挨个从 public
+                             resources
+                             static
 
+                             文件夹里面找是否存在相应的资源，如果有则直接返回
+
+
+4   websocket demo访问地址
+    http://localhost:8080/testStatic/testStatic_demo.html
+    http://localhost:8080/public_demo.html
+    http://localhost:8080/resources_demo.html
+    http://localhost:8080/static_demo.html
+5   swagger访问地址:
+    http://localhost:8080/swagger-ui.html
