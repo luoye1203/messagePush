@@ -1,0 +1,71 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    poolName: hikariPCpool
+    connection-test-query: select 1 from dual
+    hikari:
+        connection-timeout: 30000
+        idle-timeout: 10000
+        max-lifetime: 1800000
+        maximum-pool-size: 10
+        autoCommit: false
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@53.80.6.37:1521:orcl
+    username: xzst
+    password: xzst
+
+  kafka:
+    bootstrap-servers: 53.80.6.45:9092,53.80.6.46:9092,53.80.6.47:9092,53.80.6.48:9092
+    consumer:
+      enable:
+        auto:
+          commit: true
+      auto:
+        commit:
+          interval: 100
+        offset:
+          reset: latest
+      group-id: warning_group_1
+    producer:
+      servers: 53.80.6.45:9092,53.80.6.46:9092,53.80.6.47:9092,53.80.6.48:9092
+      topic: warning
+      retries: 0
+      batch:
+        size: 4096
+      linger: 1
+      buffer:
+        memory: 40960
+
+#server:
+#  tomcat:
+##  max-http-header-size: 655360
+#  port: 9090
+
+mybatis:
+    mapper-locations: classpath:mapper/*.xml
+    config-location: classpath:mapper/mybatisConfig/mybatisConfig.xml
+
+
+
+#配置静态访问资源,拦截所有/websocket访问路径 不需要其他配置 必须要在resources文件夹下面建立static文件夹 文件夹名称不能变
+#spring:
+#    mvc:
+#        static-path-pattern: /websocket/**
+#httpclient配置参数
+#最大连接数
+http:
+  maxTotal: 100
+#并发数
+  defaultMaxPerRoute: 20
+#创建连接的最长时间
+  connectTimeout: 1000
+#从连接池中获取到连接的最长时间
+  connectionRequestTimeout: 500
+#数据传输的最长时间
+  socketTimeout: 10000
+#提交请求前测试连接是否可用
+  staleConnectionCheckEnabled: true
+
+warning:
+  ip: 10.4.106.7
+  port: 7047

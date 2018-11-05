@@ -1,0 +1,156 @@
+2018-07-09 11:30:40.844 [com.xzst.relation.mp.kafka.KafkaProducerConfig] [INFO] {retries=0, value.serializer=class org.apache.kafka.common.serialization.StringSerializer, batch.size=4096, bootstrap.servers=10.4.106.21:9092,10.4.106.22:9092,10.4.106.23:9092, buffer.memory=40960, key.serializer=class org.apache.kafka.common.serialization.StringSerializer, linger.ms=1}
+2018-07-09 11:30:52.254 [com.xzst.relation.mp.service.MessageProcessThreadService] [INFO] ConsumerMessageBean{resultSetId='1', dataMap={name=李红涛, id=1}}
+2018-07-09 13:33:19.558 [com.xzst.relation.mp.service.MessageProcessThreadService] [ERROR] 原消息为:ConsumerMessageBean{resultSetId='1', dataMap={name=李红涛, id=1}} 查不到配置信息,请查证. ..
+2018-07-09 14:30:35.474 [com.xzst.relation.MessagePushServerApplication] [INFO] Starting MessagePushServerApplication on LHT-PC with PID 16268 (G:\gitPro\mp\messagePush\messagePush_server\target\classes started by LHT in G:\gitPro\mp\messagePush)
+2018-07-09 14:30:35.479 [com.xzst.relation.MessagePushServerApplication] [INFO] No active profile set, falling back to default profiles: default
+2018-07-09 14:30:35.574 [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext] [INFO] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@f3d63b: startup date [Mon Jul 09 14:30:35 CST 2018]; root of context hierarchy
+2018-07-09 14:30:35.921 [org.hibernate.validator.internal.util.Version] [INFO] HV000001: Hibernate Validator 5.3.5.Final
+2018-07-09 14:30:37.343 [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] [INFO] Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$f0bd53] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-09 14:30:37.508 [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] [INFO] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2d3eabd0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-09 14:30:38.284 [org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer] [INFO] Tomcat initialized with port(s): 9090 (http)
+2018-07-09 14:30:38.506 [org.springframework.web.context.ContextLoader] [INFO] Root WebApplicationContext: initialization completed in 2935 ms
+2018-07-09 14:30:38.788 [org.springframework.boot.web.servlet.ServletRegistrationBean] [INFO] Mapping servlet: 'dispatcherServlet' to [/]
+2018-07-09 14:30:38.792 [org.springframework.boot.web.servlet.FilterRegistrationBean] [INFO] Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-09 14:30:38.793 [org.springframework.boot.web.servlet.FilterRegistrationBean] [INFO] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-09 14:30:38.793 [org.springframework.boot.web.servlet.FilterRegistrationBean] [INFO] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-09 14:30:38.793 [org.springframework.boot.web.servlet.FilterRegistrationBean] [INFO] Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-09 14:30:39.014 [com.zaxxer.hikari.HikariDataSource] [INFO] hikariPCpool - Started.
+2018-07-09 14:30:39.021 [com.zaxxer.hikari.util.DriverDataSource] [WARN] Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2018-07-09 14:30:39.141 [com.zaxxer.hikari.pool.PoolBase] [INFO] hikariPCpool - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+2018-07-09 14:30:39.489 [com.xzst.relation.mp.kafka.KafkaProducerConfig] [INFO] {retries=0, value.serializer=class org.apache.kafka.common.serialization.StringSerializer, batch.size=4096, bootstrap.servers=10.4.106.21:9092,10.4.106.22:9092,10.4.106.23:9092, buffer.memory=40960, key.serializer=class org.apache.kafka.common.serialization.StringSerializer, linger.ms=1}
+2018-07-09 14:30:40.344 [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] Mapped "{[/kafka/send],methods=[GET]}" onto public com.xzst.relation.mp.model.BaseResponse com.xzst.relation.mp.kafka.KafkaController.sendKafka(java.lang.String)
+2018-07-09 14:30:40.349 [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-07-09 14:30:40.350 [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-07-09 14:30:40.351 [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-07-09 14:30:40.353 [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-07-09 14:30:40.354 [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-07-09 14:30:40.520 [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor] [INFO] Initializing ExecutorService  'taskExecutor'
+2018-07-09 14:30:40.591 [springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping] [INFO] Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-07-09 14:30:40.822 [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] [INFO] Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@f3d63b: startup date [Mon Jul 09 14:30:35 CST 2018]; root of context hierarchy
+2018-07-09 14:30:40.920 [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] [INFO] Mapped URL path [/websocket/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-07-09 14:30:40.921 [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] [INFO] Mapped URL path [/swagger-ui.html] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-07-09 14:30:40.921 [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] [INFO] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-07-09 14:30:40.921 [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] [INFO] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-07-09 14:30:40.986 [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] [INFO] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-07-09 14:30:41.657 [org.springframework.web.socket.server.standard.ServerEndpointExporter] [INFO] Registering @ServerEndpoint class: class com.xzst.relation.mp.webSocket.WebSocket
+2018-07-09 14:30:41.666 [org.springframework.jmx.export.annotation.AnnotationMBeanExporter] [INFO] Registering beans for JMX exposure on startup
+2018-07-09 14:30:41.668 [org.springframework.jmx.export.annotation.AnnotationMBeanExporter] [INFO] Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-07-09 14:30:41.675 [org.springframework.jmx.export.annotation.AnnotationMBeanExporter] [INFO] Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-07-09 14:30:41.678 [org.springframework.context.support.DefaultLifecycleProcessor] [INFO] Starting beans in phase 0
+2018-07-09 14:30:41.694 [org.apache.kafka.clients.consumer.ConsumerConfig] [INFO] ConsumerConfig values: 
+	metric.reporters = []
+	metadata.max.age.ms = 300000
+	partition.assignment.strategy = [org.apache.kafka.clients.consumer.RangeAssignor]
+	reconnect.backoff.ms = 50
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	max.partition.fetch.bytes = 1048576
+	bootstrap.servers = [10.4.106.21:9092, 10.4.106.22:9092, 10.4.106.23:9092]
+	ssl.keystore.type = JKS
+	enable.auto.commit = true
+	sasl.mechanism = GSSAPI
+	interceptor.classes = null
+	exclude.internal.topics = true
+	ssl.truststore.password = null
+	client.id = 
+	ssl.endpoint.identification.algorithm = null
+	max.poll.records = 2147483647
+	check.crcs = true
+	request.timeout.ms = 40000
+	heartbeat.interval.ms = 3000
+	auto.commit.interval.ms = 5000
+	receive.buffer.bytes = 65536
+	ssl.truststore.type = JKS
+	ssl.truststore.location = null
+	ssl.keystore.password = null
+	fetch.min.bytes = 1
+	send.buffer.bytes = 131072
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	group.id = warning_group_1
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	ssl.trustmanager.algorithm = PKIX
+	ssl.key.password = null
+	fetch.max.wait.ms = 500
+	sasl.kerberos.min.time.before.relogin = 60000
+	connections.max.idle.ms = 540000
+	session.timeout.ms = 30000
+	metrics.num.samples = 2
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.keystore.location = null
+	ssl.cipher.suites = null
+	security.protocol = PLAINTEXT
+	ssl.keymanager.algorithm = SunX509
+	metrics.sample.window.ms = 30000
+	auto.offset.reset = latest
+
+2018-07-09 14:30:41.768 [org.apache.kafka.clients.consumer.ConsumerConfig] [INFO] ConsumerConfig values: 
+	metric.reporters = []
+	metadata.max.age.ms = 300000
+	partition.assignment.strategy = [org.apache.kafka.clients.consumer.RangeAssignor]
+	reconnect.backoff.ms = 50
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	max.partition.fetch.bytes = 1048576
+	bootstrap.servers = [10.4.106.21:9092, 10.4.106.22:9092, 10.4.106.23:9092]
+	ssl.keystore.type = JKS
+	enable.auto.commit = true
+	sasl.mechanism = GSSAPI
+	interceptor.classes = null
+	exclude.internal.topics = true
+	ssl.truststore.password = null
+	client.id = consumer-1
+	ssl.endpoint.identification.algorithm = null
+	max.poll.records = 2147483647
+	check.crcs = true
+	request.timeout.ms = 40000
+	heartbeat.interval.ms = 3000
+	auto.commit.interval.ms = 5000
+	receive.buffer.bytes = 65536
+	ssl.truststore.type = JKS
+	ssl.truststore.location = null
+	ssl.keystore.password = null
+	fetch.min.bytes = 1
+	send.buffer.bytes = 131072
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	group.id = warning_group_1
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	ssl.trustmanager.algorithm = PKIX
+	ssl.key.password = null
+	fetch.max.wait.ms = 500
+	sasl.kerberos.min.time.before.relogin = 60000
+	connections.max.idle.ms = 540000
+	session.timeout.ms = 30000
+	metrics.num.samples = 2
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.keystore.location = null
+	ssl.cipher.suites = null
+	security.protocol = PLAINTEXT
+	ssl.keymanager.algorithm = SunX509
+	metrics.sample.window.ms = 30000
+	auto.offset.reset = latest
+
+2018-07-09 14:30:41.781 [org.apache.kafka.common.utils.AppInfoParser] [INFO] Kafka version : 0.10.0.1
+2018-07-09 14:30:41.781 [org.apache.kafka.common.utils.AppInfoParser] [INFO] Kafka commitId : a7a17cdec9eaa6c5
+2018-07-09 14:30:41.786 [org.springframework.context.support.DefaultLifecycleProcessor] [INFO] Starting beans in phase 2147483647
+2018-07-09 14:30:41.787 [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper] [INFO] Context refreshed
+2018-07-09 14:30:41.810 [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper] [INFO] Found 1 custom documentation plugin(s)
+2018-07-09 14:30:41.850 [org.apache.kafka.clients.consumer.internals.AbstractCoordinator] [INFO] Discovered coordinator server23:9092 (id: 2147483645 rack: null) for group warning_group_1.
+2018-07-09 14:30:41.862 [org.apache.kafka.clients.consumer.internals.ConsumerCoordinator] [INFO] Revoking previously assigned partitions [] for group warning_group_1
+2018-07-09 14:30:41.863 [org.springframework.kafka.listener.KafkaMessageListenerContainer] [INFO] partitions revoked:[]
+2018-07-09 14:30:41.864 [org.apache.kafka.clients.consumer.internals.AbstractCoordinator] [INFO] (Re-)joining group warning_group_1
+2018-07-09 14:30:41.892 [org.apache.kafka.clients.consumer.internals.AbstractCoordinator] [INFO] Successfully joined group warning_group_1 with generation 1
+2018-07-09 14:30:41.893 [org.apache.kafka.clients.consumer.internals.ConsumerCoordinator] [INFO] Setting newly assigned partitions [warning-0, warning-1, warning-2, warning-3] for group warning_group_1
+2018-07-09 14:30:41.906 [springfox.documentation.spring.web.scanners.ApiListingReferenceScanner] [INFO] Scanning for api listing references
+2018-07-09 14:30:41.911 [org.springframework.kafka.listener.KafkaMessageListenerContainer] [INFO] partitions assigned:[warning-0, warning-1, warning-2, warning-3]
+2018-07-09 14:30:42.197 [org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer] [INFO] Tomcat started on port(s): 9090 (http)
+2018-07-09 14:30:42.204 [com.xzst.relation.MessagePushServerApplication] [INFO] Started MessagePushServerApplication in 7.205 seconds (JVM running for 7.825)
