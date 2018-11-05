@@ -22,14 +22,15 @@ public class KafkaConsumerListener {
 	@Autowired
 	private MessageProcessThreadService messageProcessThreadService;
 
-	@KafkaListener(topics = {"warning_new"})
+	//可以动态接收topic
+	@KafkaListener(topics = {"${spring.kafka.producer.topic}"})
 	public void kafkaConsumerListenterMethod(ConsumerRecord<?, ?> record) {
 
 		if(record!=null&&record.value()!=null&&!record.value().toString().trim().equals("")){
 			String message=  record.value().toString();
 			try {
-//				logger.info("消费的topic为:  "+record.topic());
-//				logger.info("消费的topic为:  "+record);
+				logger.info("消费的topic为:  "+record.topic());
+				logger.info("消费的topic为:  "+record);
 				ConsumerMessageBean messageBean= JSONTools.string2JavaBean(message,ConsumerMessageBean.class);
 				messageProcessThreadService.processData(messageBean);
 			} catch (Exception e) {

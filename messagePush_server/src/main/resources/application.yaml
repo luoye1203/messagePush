@@ -30,7 +30,7 @@ spring:
     producer:
 #      servers: 53.80.6.45:9092,53.80.6.46:9092,53.80.6.47:9092,53.80.6.48:9092
       servers: 10.4.106.21:9092,10.4.106.22:9092,10.4.106.23:9092,10.4.106.24:9092
-      topic: warning_new
+      topic: warning_new1
       retries: 0
       batch:
         size: 4096
