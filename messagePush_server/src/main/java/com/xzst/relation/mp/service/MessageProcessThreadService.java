@@ -5,7 +5,6 @@ import com.alibaba.fastjson.JSON;
 import com.xzst.relation.mp.model.MessageDetail.SaveMessageDetailParams;
 import com.xzst.relation.mp.model.MessageDetail.WarningDetailBean;
 import com.xzst.relation.mp.model.webSocket.ConsumerMessageBean;
-import com.xzst.relation.mp.util.DateUtils;
 import com.xzst.relation.mp.util.JSONTools;
 import com.xzst.relation.mp.util.Str2DateFormatUtils;
 import com.xzst.relation.mp.webSocket.WebSocket;
@@ -15,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
