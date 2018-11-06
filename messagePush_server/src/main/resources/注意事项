@@ -3,7 +3,17 @@
     文件中的代码需要放开注释
     打包时则需要注释掉，否则报错
 
-2   static/demo.html 的配置注意打包时更改路径 路径需要加上所属的项目名 例如ws://localhost:8080/项目名/websocket(websocket为@ServerEndpoint的value值)
+
+
+    上面有简述过当我们使用外部Tomcat时，项目的管理权将会由Spring交接至Tomcat。
+    而Tomcat7及后续版本是对websocket直接支持的，且我们所使用的jar包也是tomcat提供的。
+    但是我们在WebSocketConfig中将ServerEndpointExporter指定给Spring管理。而部署后ServerEndpoint是需要Tomcat直接管理才能生效的。所以此时即就是此包的管理权交接失败，那肯定不能成功了。最后我们需要将WebSocketConfig中的bean配置注释掉。然后再打包上传部署测试。一切正常！
+
+
+
+
+2   public/publicJs.js 打包时注意更改 ip 如果不是本地调试，注意去掉appName
+    uri要和@ServerEndpoint 的value值一致
 
 3   Spring Boot 默认会挨个从 public
                              resources
