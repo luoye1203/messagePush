@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xzst.relation.mp.dao.MessageDao">
+
+    <resultMap id="messageMap" type="com.xzst.relation.mp.model.MessageDetail.MessageModel">
+        <id column="id" property="id" />
+        <result column="message" property="message" />
+    </resultMap>
+
+
+    <insert id="insertMeassge2Database" parameterType="com.xzst.relation.mp.model.MessageDetail.MessageModel">
+        INSERT INTO MESSAGE_DETAIL
+            (ID                               ,message         )VALUES
+            (#{id,jdbcType=VARCHAR},#{message,jdbcType=VARCHAR} )
+    </insert>
+
+    <select id="messageList" resultMap="messageMap" >
+        select * from MESSAGE_DETAIL
+    </select>
+
+</mapper>

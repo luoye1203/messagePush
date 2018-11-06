@@ -2,6 +2,7 @@ package com.xzst.relation.mp.controller;
 
 import com.xzst.relation.mp.model.BaseResponse;
 import com.xzst.relation.mp.model.webSocket.ConsumerMessageBean;
+import com.xzst.relation.mp.service.MessageService;
 import com.xzst.relation.mp.util.DateUtils;
 import com.xzst.relation.mp.util.JSONTools;
 import io.swagger.annotations.*;
@@ -30,6 +31,9 @@ public class KafkaController {
 	public static final String endTag = "</font>";
 	@Autowired
 	private KafkaTemplate kafkaTemplate;
+
+	@Autowired
+    private MessageService messageService;
 
 	private static int count=1;
 
@@ -71,11 +75,30 @@ public class KafkaController {
 			logger.info("发送kafka成功.");
 		} catch (Exception e) {
 			logger.error("发送kafka失败", e);
-			return BaseResponse.buildResponse().setCode(200).setMessage("发送失败").build();
+			return BaseResponse.buildResponse().setCode(201).setMessage("发送失败").build();
 		}
 		BaseResponse response=BaseResponse.buildResponse().setCode(200).setMessage("发送成功").build();
 		return response;
 	}
+
+
+    @RequestMapping(value = "/messageList", method = RequestMethod.GET)
+    @ApiOperation(value = "查看接收处理到的消息",notes = "")
+    @ApiImplicitParams(
+            {
+            }
+    )
+    public BaseResponse messageList() {
+	    List list=null;
+       try {
+           list=messageService.messageList();
+        } catch (Exception e) {
+            logger.error("发送kafka失败", e);
+            return BaseResponse.buildResponse().setCode(201).setMessage("发送失败").build();
+        }
+        BaseResponse response=BaseResponse.buildResponse().setObj(list).setCode(200).setMessage("发送成功").build();
+        return response;
+    }
 
 
 }
