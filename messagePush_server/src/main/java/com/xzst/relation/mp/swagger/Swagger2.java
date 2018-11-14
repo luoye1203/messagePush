@@ -24,7 +24,7 @@ import java.util.List;
 public class Swagger2 {
 
     @Bean
-    public Docket userManage() {
+    public Docket kafkaManage() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("kafka模块")
                 .genericModelSubstitutes(DeferredResult.class)
@@ -38,6 +38,23 @@ public class Swagger2 {
 //                .globalOperationParameters(getTokenParam())
                 .apiInfo(detailInfo("kafka模块"));
     }
+
+    @Bean
+    public Docket filterManage() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("filter模块")
+                .genericModelSubstitutes(DeferredResult.class)
+//                .genericModelSubstitutes(ResponseEntity.class)
+                .useDefaultResponseMessages(false)
+                .forCodeGeneration(true)
+                .pathMapping("/")
+                .select()
+                .paths(PathSelectors.regex("/filter/.*"))//过滤的接口
+                .build()
+//                .globalOperationParameters(getTokenParam())
+                .apiInfo(detailInfo("filter模块"));
+    }
+
 
     private ApiInfo detailInfo(String title) {
         return new ApiInfoBuilder()

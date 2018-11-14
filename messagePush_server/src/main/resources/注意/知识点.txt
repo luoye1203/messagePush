@@ -1,0 +1,2 @@
+1 //在 SpringBootApplication 上使用@ServletComponentScan 注解后，Servlet、Filter、Listener 可以直接通过 @WebServlet、@WebFilter、@WebListener 注解自动注册，无需其他代码。
+2 @WebFilter 多个此类过滤器通过文件名调整顺序
