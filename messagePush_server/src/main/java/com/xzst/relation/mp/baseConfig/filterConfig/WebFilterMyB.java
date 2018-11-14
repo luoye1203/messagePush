@@ -3,6 +3,7 @@ package com.xzst.relation.mp.baseConfig.filterConfig;
 import com.alibaba.fastjson.JSON;
 import com.xzst.relation.mp.model.BaseResponse;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.Logger;
 import org.springframework.http.HttpStatus;
 
 import javax.servlet.*;
@@ -15,6 +16,7 @@ import java.io.PrintWriter;
 //        urlPatterns = {"/filter/*", "/kafka/*"})
         urlPatterns = {"/filter/*"})
 public class WebFilterMyB implements Filter {
+    private final Logger logger = Logger.getLogger(this.getClass());
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
 
@@ -22,6 +24,7 @@ public class WebFilterMyB implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        logger.info(this.getClass().getName()+" 过滤器开始起作用");
         String token = request.getParameter("token");
         if (StringUtils.isNoneBlank(token)) {
             chain.doFilter(request, response);
