@@ -23,6 +23,15 @@ import java.util.List;
 @EnableSwagger2
 public class Swagger2 {
 
+    //添加全局参数
+    private List<Parameter> getTokenParam(){
+        ParameterBuilder tokenPar = new ParameterBuilder();
+        List<Parameter> pars = new ArrayList<Parameter>();
+        tokenPar.name("Authorization").description("令牌").modelRef(new ModelRef("string")).parameterType("header").required(false).build();
+        pars.add(tokenPar.build());
+        return pars;
+    }
+
     @Bean
     public Docket kafkaManage() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -35,7 +44,7 @@ public class Swagger2 {
                 .select()
                 .paths(PathSelectors.regex("/kafka/.*"))//过滤的接口
                 .build()
-//                .globalOperationParameters(getTokenParam())
+                .globalOperationParameters(getTokenParam())
                 .apiInfo(detailInfo("kafka模块"));
     }
 
@@ -51,7 +60,7 @@ public class Swagger2 {
                 .select()
                 .paths(PathSelectors.regex("/filter/.*"))//过滤的接口
                 .build()
-//                .globalOperationParameters(getTokenParam())
+                .globalOperationParameters(this.getTokenParam())
                 .apiInfo(detailInfo("filter模块"));
     }
 
