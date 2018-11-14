@@ -1,4 +1,4 @@
-package com.xzst.relation.mp.baseConfig.filterConfig;
+package com.xzst.relation.mp.baseConfig.filterConfig.beanFilter;
 
 
 import com.alibaba.fastjson.JSON;

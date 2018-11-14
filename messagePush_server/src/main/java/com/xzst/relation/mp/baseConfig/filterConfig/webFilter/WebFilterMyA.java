@@ -1,4 +1,4 @@
-package com.xzst.relation.mp.baseConfig.filterConfig;
+package com.xzst.relation.mp.baseConfig.filterConfig.webFilter;
 
 import com.alibaba.fastjson.JSON;
 import com.xzst.relation.mp.model.BaseResponse;
@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebFilter(filterName = "webFilterMyB",
+@WebFilter(filterName = "webFilterMyA",
 //        urlPatterns = {"/filter/*", "/kafka/*"})
         urlPatterns = {"/filter/*"})
-public class WebFilterMyB implements Filter {
+public class WebFilterMyA implements Filter {
     private final Logger logger = Logger.getLogger(this.getClass());
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
