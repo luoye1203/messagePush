@@ -65,6 +65,23 @@ public class Swagger2 {
     }
 
 
+    @Bean
+    public Docket interceptorManage() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("interceptor模块")
+                .genericModelSubstitutes(DeferredResult.class)
+//                .genericModelSubstitutes(ResponseEntity.class)
+                .useDefaultResponseMessages(false)
+                .forCodeGeneration(true)
+                .pathMapping("/")
+                .select()
+                .paths(PathSelectors.regex("/interceptor/.*"))//过滤的接口
+                .build()
+                .globalOperationParameters(this.getTokenParam())
+                .apiInfo(detailInfo("interceptor模块"));
+    }
+
+
     private ApiInfo detailInfo(String title) {
         return new ApiInfoBuilder()
                 .title(title)//大标题
