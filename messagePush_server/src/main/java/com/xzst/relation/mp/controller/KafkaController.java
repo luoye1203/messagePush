@@ -27,8 +27,7 @@ import java.util.*;
 public class KafkaController {
 	private final Logger logger = Logger.getLogger(this.getClass());
 
-	public static final String preTag = "<font weight=\'bold\' color=\'#FF0000\'>";
-	public static final String endTag = "</font>";
+
 	@Autowired
 	private KafkaTemplate kafkaTemplate;
 
