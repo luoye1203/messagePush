@@ -33,7 +33,7 @@ public class AopController {
 	)
 	@VisitLog("测试")
 	public BaseResponse testWebFilter(@RequestParam String token) {
-		logger.info("开始");
+		logger.info("-----------------开始");
 		try {
 
 

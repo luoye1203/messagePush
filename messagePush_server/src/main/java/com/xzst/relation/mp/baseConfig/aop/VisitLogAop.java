@@ -2,12 +2,15 @@ package com.xzst.relation.mp.baseConfig.aop;
 
 
 import com.xzst.relation.mp.annotation.VisitLog;
+import com.xzst.relation.mp.model.VisitLogModel;
+import com.xzst.relation.mp.service.VisitLogService;
 import org.apache.log4j.Logger;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -21,6 +24,8 @@ import java.util.Arrays;
 @Aspect
 public class VisitLogAop {
     private final Logger logger = Logger.getLogger(this.getClass());
+    @Autowired
+    private VisitLogService visitLogService;
 
     //定义切点
     @Pointcut("@annotation(com.xzst.relation.mp.annotation.VisitLog)")
@@ -30,22 +35,30 @@ public class VisitLogAop {
 
     @Before("logPointCut()")
     public void deBefore(JoinPoint joinPoint) throws Throwable {
-        // 接收到请求，记录请求内容
-        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-        HttpServletRequest request = attributes.getRequest();
-        // 记录下请求内容
-        logger.info("URL : " + request.getRequestURL().toString());
-        logger.info("HTTP_METHOD : " + request.getMethod());
-        logger.info("IP : " + request.getRemoteAddr());
-        logger.info("CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
-        logger.info("ARGS : " + Arrays.toString(joinPoint.getArgs()));
-        String className= VisitLogAop.getAnnotationLogForClass(joinPoint);
-        String methodName=VisitLogAop.getAnnotationLogForMethod(joinPoint);
-        logger.info(className);
-        logger.info(methodName);
 
-        ;
-
+        try {
+            // 接收到请求，记录请求内容
+            ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+            HttpServletRequest request = attributes.getRequest();
+            // 记录下请求内容
+            logger.info("URL : " + request.getRequestURL().toString());
+            logger.info("HTTP_METHOD : " + request.getMethod());
+            logger.info("IP : " + request.getRemoteAddr());
+            logger.info("CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
+            logger.info("ARGS : " + Arrays.toString(joinPoint.getArgs()));
+            String className= VisitLogAop.getAnnotationLogForClass(joinPoint);
+            String methodName=VisitLogAop.getAnnotationLogForMethod(joinPoint);
+            logger.info(className);
+            logger.info(methodName);
+            VisitLogModel model=new VisitLogModel();
+            model.setMoudelName(className);
+            model.setApiName(methodName);
+            model.setIp(request.getRemoteAddr());
+            model.setUrl(request.getRequestURL().toString());
+            visitLogService.insertVistLog(model);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
