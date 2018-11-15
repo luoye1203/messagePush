@@ -15,7 +15,7 @@ public class BeanFilterConfigMy {
 //        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
 //        filterRegistrationBean.setFilter(myfilterA);
         filterRegistrationBean.addUrlPatterns("/filter/*");
-        filterRegistrationBean.addUrlPatterns("/kafka/*");
+//        filterRegistrationBean.addUrlPatterns("/kafka/*");
         filterRegistrationBean.setOrder(1);
         return filterRegistrationBean;
     }
@@ -27,7 +27,7 @@ public class BeanFilterConfigMy {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
         filterRegistrationBean.setFilter(myfilterB);
         filterRegistrationBean.addUrlPatterns("/filter/*");
-        filterRegistrationBean.addUrlPatterns("/kafka/*");
+//        filterRegistrationBean.addUrlPatterns("/kafka/*");
         filterRegistrationBean.setOrder(0);
         return filterRegistrationBean;
     }

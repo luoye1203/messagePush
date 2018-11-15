@@ -19,7 +19,7 @@ public class VisitLogService {
     public void insertVistLog(VisitLogModel visitLogModel){
         visitLogDao.insertVistLog(visitLogModel);
 
-        throw new RuntimeException("测试");
+//        throw new RuntimeException("测试");
     }
 
 }

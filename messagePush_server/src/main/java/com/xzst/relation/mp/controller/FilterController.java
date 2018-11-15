@@ -21,7 +21,7 @@ import java.util.Map;
 @RestController
 @Api("过滤器测试服务")
 @RequestMapping("/filter/")
-//@VisitLog(value = "过滤器")
+@VisitLog(value = "过滤器")
 public class FilterController {
 	private final Logger logger = Logger.getLogger(this.getClass());
 

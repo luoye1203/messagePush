@@ -20,9 +20,6 @@ public class AopController {
 	private final Logger logger = Logger.getLogger(this.getClass());
 
 
-
-
-
 	@RequestMapping(value = "/aopTest", method = RequestMethod.GET)
 	@ApiOperation(value = "aop测试",notes = "")
 	@ApiParam(required = true)
