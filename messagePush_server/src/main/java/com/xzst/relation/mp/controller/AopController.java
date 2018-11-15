@@ -9,28 +9,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
  * Created by LHT on 2018/7/4.
  */
 @RestController
-@Api("过滤器测试服务")
-@RequestMapping("/filter/")
-//@VisitLog(value = "过滤器")
-public class FilterController {
+@Api("AOP测试服务")
+@RequestMapping("/aop/")
+@VisitLog(value = "aop模块")
+public class AopController {
 	private final Logger logger = Logger.getLogger(this.getClass());
 
 
 
 
 
-	@RequestMapping(value = "/webFilter", method = RequestMethod.GET)
-	@ApiOperation(value = "webFilter测试",notes = "")
+	@RequestMapping(value = "/aopTest", method = RequestMethod.GET)
+	@ApiOperation(value = "aop测试",notes = "")
 	@ApiParam(required = true)
 	@ApiImplicitParams(
 			{

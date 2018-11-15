@@ -82,6 +82,23 @@ public class Swagger2 {
     }
 
 
+    @Bean
+    public Docket aopManage() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("aop模块")
+                .genericModelSubstitutes(DeferredResult.class)
+//                .genericModelSubstitutes(ResponseEntity.class)
+                .useDefaultResponseMessages(false)
+                .forCodeGeneration(true)
+                .pathMapping("/")
+                .select()
+                .paths(PathSelectors.regex("/aop/.*"))//过滤的接口
+                .build()
+                .globalOperationParameters(this.getTokenParam())
+                .apiInfo(detailInfo("aop模块"));
+    }
+
+
     private ApiInfo detailInfo(String title) {
         return new ApiInfoBuilder()
                 .title(title)//大标题
