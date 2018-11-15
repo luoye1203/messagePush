@@ -8,11 +8,11 @@ import org.springframework.stereotype.Component;
 public class ScheduledMy {
     private final Logger logger = Logger.getLogger(this.getClass());
 
-    @Scheduled(initialDelay =1000*10, fixedDelay =1000*30)
+    @Scheduled(initialDelay =1000*10, fixedDelay =1000*60*60)
     public  void fixDelayTest(){
         logger.info("fixedDelay 定时任务");
     }
-    @Scheduled(initialDelay =1000*10, fixedRate =1000*60)
+    @Scheduled(initialDelay =1000*10, fixedRate =1000*60*60*2)
     public  void fixRateTest(){
         logger.info("fixedRate 定时任务");
     }
