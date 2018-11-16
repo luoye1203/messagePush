@@ -1,6 +1,7 @@
 package com.xzst.relation.mp.webSocket;
 
 import org.apache.log4j.Logger;
+import org.springframework.context.annotation.Scope;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
@@ -8,7 +9,9 @@ import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArraySet;
+import java.util.concurrent.atomic.AtomicInteger;
 
+//
 @ServerEndpoint(value = "/chat", configurator = WebSocketConfig.class)
 @Component
 public class WebSocket {
@@ -16,6 +19,7 @@ public class WebSocket {
 
 	//静态变量，用来记录当前在线连接数。应该把它设计成线程安全的。
 	private static int onlineCount = 0;
+	private static final AtomicInteger onlineCountNew = new AtomicInteger(1);
 
 	//concurrent包的线程安全Set，用来存放每个客户端对应的MyWebSocket对象。
 	private static CopyOnWriteArraySet<WebSocket> webSocketSet = new CopyOnWriteArraySet<WebSocket>();
@@ -35,6 +39,7 @@ public class WebSocket {
 		String httpSessionId=session.getUserProperties().get("sessionId").toString();
 		String clientIP= session.getUserProperties().get("clientIP").toString();
 		String sessionID=session.getId();
+		onlineCountNew.incrementAndGet();
 
 		this.session = session;
 		webSocketSet.add(this);     //加入set中
