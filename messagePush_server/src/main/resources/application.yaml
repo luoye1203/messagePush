@@ -38,6 +38,9 @@ spring:
       buffer:
         memory: 40960
 
+
+
+
 #server:
 #  tomcat:
 ##  max-http-header-size: 655360
@@ -47,7 +50,10 @@ mybatis:
     mapper-locations: classpath:mapper/*.xml
     config-location: classpath:mapper/mybatisConfig/mybatisConfig.xml
 
-
+interceptor:
+  test:
+    urls:
+      -  "/interceptor/*"
 
 
 
