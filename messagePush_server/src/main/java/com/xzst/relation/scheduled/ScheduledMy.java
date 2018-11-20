@@ -12,7 +12,7 @@ public class ScheduledMy {
     public  void fixDelayTest(){
         logger.info("fixedDelay 定时任务");
     }
-    @Scheduled(initialDelay =1000*10, fixedRate =1000*60*60*2)
+    @Scheduled(initialDelay =1000*10, fixedRate =1000*60*60*2 )
     public  void fixRateTest(){
         logger.info("fixedRate 定时任务");
     }
