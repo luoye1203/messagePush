@@ -55,5 +55,11 @@ interceptor:
     urls:
       -  "/interceptor/*"
 
+filter:
+  test:
+    urls:
+    -  "/filter/*"
+    -  "/interceptor/*"
+
 
 

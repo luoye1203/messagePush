@@ -10,3 +10,4 @@ gen
 /target/
 /messagePush.iml
 /.idea/
+/messagePush_server.iml
