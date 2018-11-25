@@ -1,5 +1,8 @@
 package com.xzst.relation.mp.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,18 +10,22 @@ import java.util.Map;
  * Created by li on 2017/7/19.
  * 返回数据的模型
  */
+@ApiModel(value = "返回结果类",description = "返回结果，加状态码")
 public class BaseResponse {
     /**
      * 成功时返回的数据
      */
+    @ApiModelProperty(value = "返回实际结果")
     private  Object obj;
     /**
      * 返回状态
      */
+    @ApiModelProperty(value = "自定义状态码")
     private  int code;
     /**
      * 返回msg
      */
+    @ApiModelProperty(value = "返回的消息说明")
     private  String message;
     /**
      * 其余参数

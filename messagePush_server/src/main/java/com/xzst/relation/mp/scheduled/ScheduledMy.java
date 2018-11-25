@@ -1,4 +1,4 @@
-package com.xzst.relation.scheduled;
+package com.xzst.relation.mp.scheduled;
 
 import org.apache.log4j.Logger;
 import org.springframework.scheduling.annotation.Scheduled;

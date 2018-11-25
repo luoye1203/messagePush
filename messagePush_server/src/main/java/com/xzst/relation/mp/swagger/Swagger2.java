@@ -85,7 +85,7 @@ public class Swagger2 {
     @Bean
     public Docket aopManage() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("aop模块")
+                .groupName("aop模块22")
                 .genericModelSubstitutes(DeferredResult.class)
 //                .genericModelSubstitutes(ResponseEntity.class)
                 .useDefaultResponseMessages(false)
@@ -95,9 +95,25 @@ public class Swagger2 {
                 .paths(PathSelectors.regex("/aop/.*"))//过滤的接口
                 .build()
                 .globalOperationParameters(this.getTokenParam())
-                .apiInfo(detailInfo("aop模块"));
+                .apiInfo(detailInfo("aop模块11"));
     }
 
+
+    @Bean
+    public Docket swaggerManage() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("swagger模块22")
+                .genericModelSubstitutes(DeferredResult.class)
+//                .genericModelSubstitutes(ResponseEntity.class)
+                .useDefaultResponseMessages(false)
+                .forCodeGeneration(true)
+                .pathMapping("/")
+                .select()
+                .paths(PathSelectors.regex("/swagger/.*"))//过滤的接口
+                .build()
+                .globalOperationParameters(this.getTokenParam())
+                .apiInfo(detailInfo("swagger模块"));
+    }
 
     private ApiInfo detailInfo(String title) {
         return new ApiInfoBuilder()
