@@ -58,6 +58,12 @@ public class Str2DateFormatUtils {
 			return strSuccess;
 		}
 	}
+
+	public static String FormatDateFor17(String dateStr){
+		return Str2DateFormatUtils.FormatDate(dateStr,"yyyyMMddHHmmssSSS");
+	}
+
+
 	public static void main(String[] args) {
 		String[] dateStrArray=new String[]{
 				"5612",
@@ -70,7 +76,8 @@ public class Str2DateFormatUtils {
 				"201403121205",
 		};
 		for(int i=0;i<dateStrArray.length;i++){
-			LOG.info(i+"  "+dateStrArray[i] +"------------------------------".substring(1,30-dateStrArray[i].length())+ FormatDate(dateStrArray[i],"yyyy-MM-dd HH:mm:ss.SSS"));
+//			LOG.info(i+"  "+dateStrArray[i] +"------------------------------".substring(1,30-dateStrArray[i].length())+ FormatDate(dateStrArray[i],"yyyy-MM-dd HH:mm:ss.SSS"));
+			LOG.info(i+"  "+dateStrArray[i] +"------------------------------".substring(1,30-dateStrArray[i].length())+ FormatDateFor17(dateStrArray[i]));
 		}
 
 	}
