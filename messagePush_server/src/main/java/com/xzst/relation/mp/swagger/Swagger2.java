@@ -132,6 +132,23 @@ public class Swagger2 {
                 .apiInfo(detailInfo("redis模块"));
     }
 
+
+    @Bean
+    public Docket lockManage() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("distributedLocker模块22")
+                .genericModelSubstitutes(DeferredResult.class)
+//                .genericModelSubstitutes(ResponseEntity.class)
+                .useDefaultResponseMessages(false)
+                .forCodeGeneration(true)
+                .pathMapping("/")
+                .select()
+                .paths(PathSelectors.regex("/distributedLocker/.*"))//过滤的接口
+                .build()
+                .globalOperationParameters(this.getTokenParam())
+                .apiInfo(detailInfo("distributedLocker模块"));
+    }
+
     private ApiInfo detailInfo(String title) {
         return new ApiInfoBuilder()
                 .title(title)//大标题
