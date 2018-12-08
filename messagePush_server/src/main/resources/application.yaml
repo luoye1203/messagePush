@@ -33,10 +33,10 @@ spring:
 
 
   redis:
-    host: 10.4.106.7
+    host: localhost
     timeout: 3000
     password:
-    port: 16379
+    port: 6379
     database: 5
     jedis:
       pool:

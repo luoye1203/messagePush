@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController()
 @RequestMapping("redis")
 @Api(value = "redis",tags = "redis测试")
+@VisitLog("redis模块")
 public class RedisController {
 
     private final Logger logger = Logger.getLogger(this.getClass());
