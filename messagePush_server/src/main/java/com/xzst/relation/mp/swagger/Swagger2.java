@@ -149,6 +149,25 @@ public class Swagger2 {
                 .apiInfo(detailInfo("distributedLocker模块"));
     }
 
+
+    @Bean
+    public Docket innerManage() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("内部类json解析")
+                .genericModelSubstitutes(DeferredResult.class)
+//                .genericModelSubstitutes(ResponseEntity.class)
+                .useDefaultResponseMessages(false)
+                .forCodeGeneration(true)
+                .pathMapping("/")
+                .select()
+                .paths(PathSelectors.regex("/innerClassParam/.*"))//过滤的接口
+                .build()
+                .globalOperationParameters(this.getTokenParam())
+                .apiInfo(detailInfo("内部类json解析"));
+    }
+
+
+
     private ApiInfo detailInfo(String title) {
         return new ApiInfoBuilder()
                 .title(title)//大标题
