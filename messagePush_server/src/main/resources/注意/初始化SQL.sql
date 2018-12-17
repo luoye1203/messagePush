@@ -1,7 +1,7 @@
 CREATE TABLE `message_detail` (
   `id` varchar(40) NOT NULL,
   `message` longtext,
-  `create_time` timestamp CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
