@@ -182,6 +182,23 @@ public class Swagger2 {
                 .apiInfo(detailInfo("内线程测试"));
     }
 
+    @Bean
+    public Docket lambdaManage() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("lambda测试")
+                .genericModelSubstitutes(DeferredResult.class)
+//                .genericModelSubstitutes(ResponseEntity.class)
+                .useDefaultResponseMessages(false)
+                .forCodeGeneration(true)
+                .pathMapping("/")
+                .select()
+                .paths(PathSelectors.regex("/labmda/.*"))//过滤的接口
+                .build()
+                .globalOperationParameters(this.getTokenParam())
+                .apiInfo(detailInfo("lambda测试"));
+    }
+
+
     private ApiInfo detailInfo(String title) {
         return new ApiInfoBuilder()
                 .title(title)//大标题
