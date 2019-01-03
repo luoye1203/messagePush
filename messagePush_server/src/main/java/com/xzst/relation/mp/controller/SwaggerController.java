@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController()
 @RequestMapping("swagger")
-@Api(value = "swagger",tags = "swagger参数测试")
+@Api(value = "swagger",tags = "swagger")
 public class SwaggerController {
 
     private final Logger logger = Logger.getLogger(this.getClass());

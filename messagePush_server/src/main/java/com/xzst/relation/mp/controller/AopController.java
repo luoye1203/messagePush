@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by LHT on 2018/7/4.
  */
 @RestController
-@Api(value = "AOP测试服务",tags = "AOP测试服务")
+@Api(value = "AOP测试服务",tags = "AOP")
 @RequestMapping("/aop/")
 @VisitLog(value = "aop模块")
 public class AopController {

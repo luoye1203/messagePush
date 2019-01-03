@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController()
 @RequestMapping("thread")
-@Api(value = "thread",tags = "thread测试")
+@Api(value = "thread",tags = "thread")
 @VisitLog("thread模块")
 public class MuiltiThreadController {
 

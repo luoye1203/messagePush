@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController()
 @RequestMapping("distributedLocker")
-@Api(value = "distributedLocker",tags = "分布式锁测试")
+@Api(value = "distributedLocker",tags = "")
 public class DistributedLockerController {
 
     private final Logger logger = Logger.getLogger(this.getClass());

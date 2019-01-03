@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController()
 @RequestMapping("labmda")
-@Api(value = "labmda", tags = "labmda测试")
+@Api(value = "labmda")
 @VisitLog("labmda模块")
 public class LambdaController {
 

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController()
 @RequestMapping("innerClassParam")
-@Api(value = "innerClassParam",tags = "静态内部类作为参数测试")
+@Api(value = "innerClassParam",tags = "")
 public class InnerClassJsonResolveController {
 
     private final Logger logger = Logger.getLogger(this.getClass());

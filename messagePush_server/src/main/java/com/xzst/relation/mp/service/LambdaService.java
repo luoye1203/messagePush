@@ -269,13 +269,18 @@ public class LambdaService {
 
         logger.info("************************************************************************************************");
 
-        String str ="equal(lg_a29c8814b14a46a384e52cd6ef6ddedd)&equal(rzfh_8d27487dc04040b0b1a2d207404653e2)&equal(rzrq_a515be61963248458f075613a6c495cc)";
+        String str = "equal(lg_a29c8814b14a46a384e52cd6ef6ddedd)&equal(rzfh_8d27487dc04040b0b1a2d207404653e2)&equal(rzrq_a515be61963248458f075613a6c495cc)";
         Matcher mat = Pattern.compile("(?<=\\()[^\\)]+").matcher(str);
 
-        while(mat.find()){
-            System.out.println(mat.group());
-          }
+        while (mat.find()) {
+            logger.info(mat.group());
+        }
 
+        int count = mat.groupCount();
+
+        for (int i = 0; i <count ; i++) {
+            logger.info("xxxxxxx: "+mat.group(i));
+        }
 
     }
 
