@@ -13,7 +13,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 //@SpringBootApplication(exclude={DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
 @SpringBootApplication(exclude={HibernateJpaAutoConfiguration.class})
-@EnableSwagger2
 @EnableTransactionManagement
 @MapperScan("com.xzst.relation.mp.dao")
 @EnableScheduling

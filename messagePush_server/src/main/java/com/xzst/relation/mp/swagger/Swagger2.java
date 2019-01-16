@@ -1,5 +1,6 @@
 package com.xzst.relation.mp.swagger;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.request.async.DeferredResult;
@@ -21,6 +22,7 @@ import java.util.List;
  */
 @Configuration
 @EnableSwagger2
+@ConditionalOnProperty(prefix = "swagger", name = "enable" ,havingValue = "true")
 public class Swagger2 {
 
     //添加全局参数
