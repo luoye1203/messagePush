@@ -22,7 +22,7 @@ import java.util.List;
  */
 @Configuration
 @EnableSwagger2
-@ConditionalOnProperty(prefix = "swagger", name = "enable" ,havingValue = "true")
+@ConditionalOnProperty(name = "swagger.enable" ,havingValue = "true")
 public class Swagger2 {
 
     //添加全局参数
